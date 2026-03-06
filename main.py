@@ -3,9 +3,12 @@ import uuid
 import random
 import cloudscraper
 from flask import Flask, request, Response
+from flask_cors import CORS
 from fake_useragent import UserAgent
 
 app = Flask(__name__)
+CORS(app)   # IMPORTANT
+
 scraper = cloudscraper.create_scraper()
 ua = UserAgent(platforms=['mobile'])
 
